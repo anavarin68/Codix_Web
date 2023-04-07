@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <title>Codix</title>
+</head>
+<body>
+    <h1><center>Codix</center></h1>
+    <hr>
+        Validation of ISBN Number</h3>
+    <p>
+        <div style="white-space: pre;"> 
+ISBN number is a legal number when
+sum=1*Digit1 + 2*Digit2 + 3*Digit3 + 4*Digit4 + 5*Digit5 + 6*Digit6 + 7*Digit7 + 8*Digit8 + 9*Digit9 + 10*Digit10
+if the sum is divisible by 11 valid ISBN Number else not a valid ISBN Number.   
+
+<u>Source Code</u>
+import java.io.*;
+import java.util.*;     
+    class ISBN
+    {   
+    
+        static boolean checkISBNNumber(long number)  
+        {  
+                
+                int sum = 0;  
+                int i, t, intNumber, dNumber;  
+                String strNumber;  
+                strNumber = ""+number;  
+          
+                if (strNumber.length() != 10)
+                {  
+                    return false;  
+                }  
+          
+                for (i = 0; i < strNumber.length(); i++)
+                {  
+                    intNumber = Integer.parseInt(strNumber.substring(i, i+1));  
+                    dNumber = i + 1;  
+                    t = dNumber * intNumber;  
+                    sum = sum + t;  
+                }  
+                
+                if ((sum % 11) == 0)
+                {  
+                    return true;  
+                }  
+          
+                return false;  
+        }  
+    
+
+        public static void main(String args[])   
+        {     
+               long n1, n2;
+               Scanner nkp=new Scanner(System.in);
+               
+               try
+               {
+                   System.out.println("Enter first 10 digit ISBN number");  
+                   n1 = nkp.nextLong();   
+                   System.out.println("Enter second 10 digit ISBN number");   
+                   n2 = nkp.nextLong();;  
+              
+                   if (checkISBNNumber(n1))   
+                        System.out.println(n1 + " is a valid ISBN number");   
+                   else  
+                        System.out.println(n1 + " is not a valid ISBN number");  
+                        
+                   if (checkISBNNumber(n2))   
+                        System.out.println(n2 + " is a a valid ISBN number");   
+                   else  
+                        System.out.println(n2 + " is not a valid ISBN number");  
+                }
+                
+               catch(java.lang.Exception e) 
+               {  
+                   System.out.println("Error while reading the data.");  
+               }   
+        }   
+    } 
+        </div>
+    </p>
+    <br>
+    <br>
+    <h3><center><a href="Java.html">Back</a> | <a href="index.html">Home</a><br></center></h3>
+    <hr>
+    <p align="center">
+        Having Doubts or Issues!!<br>
+        Mail us at:<a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">kumarpateln7@gmail.com</a>
+    </p>
+    <p>
+      <center><a href="terms&condition.html">Terms and Conditions </a>|<a href="about_us.html">About Us </a><br></center>  
+    </p>
+</body>
+
+</html>
